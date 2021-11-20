@@ -1,0 +1,2 @@
+# Worki
+Parcial sistemas transaccionales
