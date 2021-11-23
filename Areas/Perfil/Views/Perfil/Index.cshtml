@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Worki.Data.Models.PerPerfil>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PerImagen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PerCargo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PerEstado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usu)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PerImagen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PerCargo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PerEstado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usu.UsuCorreo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PerId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PerId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PerId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

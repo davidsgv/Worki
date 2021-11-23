@@ -1,0 +1,149 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "WorkiContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": "Data",
+   "OutputPath": "Data\/Models",
+   "ProjectRootNamespace": "Worki",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[adj_adjuntos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[cal_Calendario]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[chg_ChatGrupo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[chu_ChatUsuario]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[com_Comentario]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[con_configuraciones]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[cop_compartir]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[cpe_ConfiguracionesPerfil]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[den_Denuncia]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[emp_Empresa]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[enc_Encuesta]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[eti_Etiqueta]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[eve_evento]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[gpe_GustosPerfil]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[gru_Grupo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[gup_GustosProfesionales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[hob_Hobbie]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[hop_HobbiesPerfil]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ing_InvitacionGrupo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[inv_invitado]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[not_Notificacion]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ope_OpcionEncuesta]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[per_Perfil]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[pos_Post]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[pre_PreguntaEncuesta]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ree_RespuestaEncuesta]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[usg_UsuarioGrupo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[usu_Usuario]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[vis_visto]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "LAPTOP-HJQ9IGEG.Worki",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}
