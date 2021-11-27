@@ -1,8 +1,6 @@
-<div class="" style=" position: relative; left: 39.8%;	">
-    <div class="container">
-        <img class="img-circle" src="<?php echo $image; ?>" height="200" width="200">
-    </div>
-</diV>
+<div class="col-md-6 col-md-offset-4">
+    <img class="img-circle" src="<?php echo $image; ?>" height="350" width="350"/>
+</div>
 <br>
 <div class="col-md-12">
 	<?php
@@ -17,15 +15,42 @@
 <div class="col-md-12 text-center">
   <br>
   <a class="btn btn" style="color: black; border: 2px solid #000000; border-radius: 30px;" href="cambioImagen.php"> Cambiar Imagen </a>
-  <a class="btn btn" style="color: black; border: 2px solid #000000; border-radius: 30px;" href="change_pic.php"> ver mensajes </a>
-  <a class="btn btn" style="color: black; border: 2px solid #000000; border-radius: 30px;" href="change_pic.php"> Editar perfil </a>
+  <a class="btn btn" style="color: black; border: 2px solid #000000; border-radius: 30px;" href="message.php"> ver mensajes </a>
+  <a class="btn btn" style="color: black; border: 2px solid #000000; border-radius: 30px;" href="edit_profile.php"> Editar perfil </a>
   <hr>
 </div>
 
+<div class="container">
+    <div class="col-md-12">
+		<h1>Información Personal</h1>
+		<br>
+		<div class="col-md-5">
+			<?php
+			$query = $conn->query("select * from members where member_id = '$session_id'");
+			$row = $query->fetch();
+			$id = $row['member_id'];
+			?>
+			<p>Nombre: <?php echo $row['firstname']." ".$row['lastname']; ?></p>
+			<hr>
+			<p>Dirección: <?php echo $row['address']; ?></p>
+			<hr>
+			<p>Género: <?php echo $row['gender']; ?></p>
+		</div>
+		<div class="col-md-5 col-md-offset-2">
+			<p>Fecha de Nacimiento: <?php echo $row['birthdate']; ?></p>
+			<hr>
+			<p>Número de Contacto: <?php echo $row['mobile']; ?></p>
+			<hr>
+			<p>Estado: <?php echo $row['status']; ?></p>
+		</div>
+	</div>
+</div>
 <hr>
+
+<br>
 <div class="container">
   <div class="row">  
-    <div class="">    
+    <div class="col-md-12">    
       <div>
         <div class="panel-body">          
 		    <h2>Mis Fotos</h2>
@@ -46,14 +71,11 @@
 					$location = "upload/" . $_FILES["image"]["name"];
 					$conn->query("insert into photos (location,member_id) values ('$location','$session_id')");
 				?>
-				<script>window.location = 'photos.php';</script>
+				<script> window.location = 'home.php';</script>
 				<?php
 				}
 				?>
 			</div>
-			<br>
-			<br>
-			<br>
 			<div>
 				<div class="row">
 					<?php
@@ -61,17 +83,17 @@
 						while($row = $query->fetch()){
 						$id = $row['photos_id'];
 					?>
-					<div class="col-md-2 col-sm-3 text-center">
+					<div class="col-md-8 text-center">
 						<img class="img-responsive" src="<?php echo $row['location']; ?>" >
 						<hr>
-						<a class="btn btn-danger" href="delete_photos.php<?php echo '?id='.$id; ?>">Eliminar</a>
+						<a class="btn btn" style="color: red; border: 2px solid red; border-radius: 30px;" href="delete_photos.php<?php echo '?id='.$id; ?>">Eliminar</a>
 					</div>
 					<?php } ?>
 				</div>
 			</div>
-            <hr>
         </div>
       </div>                                        
    	</div><!--/col-12-->
+	<hr>
   </div>
 </div>

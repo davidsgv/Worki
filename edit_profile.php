@@ -1,72 +1,56 @@
 <?php include('header.php'); ?>    
 <?php include('session.php'); ?>    
-    <body>
+<body>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="container"><h1 class="text-center">Editar perfil</h1></div>
+	<hr>
+	<br>
+	<br>
 	<?php include('navbar.php'); ?>
 			<div id="masthead">  
 				<div class="container">
-					    <div class="row">
-      <div class="col-md-2">
-		<hr>
-		<center><img class="pp" src="<?php echo $image; ?>" height="140" width="160"></center>
-		<hr>
-		<button class="btn btn-success">Cambiar Foto de Perfil</button>
-      </div>
-		<div class="col-md-10">
-			<?php
-	$query = $conn->query("select * from members where member_id = '$session_id'");
-	$row = $query->fetch();
-	$id = $row['member_id'];
-	?>
-	<hr>
-					<form method="post" action="save_edit.php">
-	<input type="hidden" name="member_id" value="<?php echo $id; ?>">
-	Usuario:<input type="text" name="username" value="<?php echo $row['username']; ?>">
-	<hr>
-	Nombre:<input type="text" name="firstname" value="<?php echo $row['firstname']; ?>">
-	<hr>
-	Apellido:<input type="text" name="lastname" value="<?php echo $row['lastname']; ?>">
-	<hr>
-	Género:
-	<select name="gender">
-		<option><?php echo $row['gender']; ?></option>
-		<option>Hombre</option>
-		<option>Mujer</option>
-	</select>
-	<hr>
-	Fecha de Nacimiento:<input name="birthdate" type="text" value="<?php echo $row['birthdate']; ?>">
-	<hr>
-	Dirección:<input name="address" type="text" value="<?php echo $row['address']; ?>">
-	<hr>
-	Estado:<input name="status" type="text" value="<?php echo $row['status']; ?>">
-	<hr>
-	Móvil:<input name="mobile" type="text" value="<?php echo $row['mobile']; ?>">
-	<hr>
-	Trabajo:<input name="work" type="text" value="<?php echo $row['work']; ?>">
-	<hr>
-	Religión:<input name="religion" type="text" value="<?php echo $row['religion']; ?>">
-	<hr>
-	<br>
-			<center>
-			<button name="save" class="btn edit">Guardar</button>
-			</center>
-	<br>
-	<form>
-		</div>
-
-    </div> 
-				</div><!-- /cont -->
-				<div class="container">
 					<div class="row">
-					<div class="col-md-12">
-						<div class="top-spacer"> </div>
+                        <div class="col-md-2">
+							<img class="img-circle" src="<?php echo $image; ?>" height="170" width="170"/>
+							<hr>
+							<?php
+								$query = $conn->query("select * from members where member_id = '$session_id'");
+								$row = $query->fetch();
+								$id = $row['member_id'];
+							?>
+							<p class="lead text-center" style="color: black;"><?php echo $row['firstname']." ".$row['lastname']; ?></p>
+    					</div>
+						<div class="col-md-6 col-md-offset-2">
+						<?php
+							$query = $conn->query("select * from members where member_id = '$session_id'");
+							$row = $query->fetch();
+							$id = $row['member_id'];
+						?>
+						<form method="post" action="save_edit.php">
+								<input type="hidden" name="member_id" value="<?php echo $id; ?>">
+								Usuario:<br><br>
+								<input class="form-control" type="text" name="username" value="<?php echo $row['username']; ?>">
+							<hr>
+								Nombre:<br><br><input class="form-control" type="text" name="firstname" value="<?php echo $row['firstname']; ?>">
+							<hr>
+								Apellido:<br><br><input class="form-control" type="text" name="lastname" value="<?php echo $row['lastname']; ?>">
+							<hr>
+								Fecha de Nacimiento:<br><br><input class="form-control" name="birthdate" type="text" value="<?php echo $row['birthdate']; ?>">
+							<hr>
+								Dirección:<br><br><input class="form-control" name="address" type="text" value="<?php echo $row['address']; ?>">
+							<hr>
+								Estado:<br><br><input class="form-control" name="status" type="text" value="<?php echo $row['status']; ?>">
+							<hr>
+								Móvil:<br><br><input class="form-control" name="mobile" type="text" value="<?php echo $row['mobile']; ?>">
+								<br>
+							<button name="save" class="btn edit">Guardar cambios</button>
+                        </form>
+						<br>
+						<br>
 					</div>
-					</div> 
-				</div><!-- /cont -->
+				</div>
 			</div>
-
-                                                
-                                                                                
-<?php include('footer.php'); ?>
-        
-    </body>
-</html>
+</body>

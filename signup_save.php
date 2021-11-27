@@ -1,4 +1,4 @@
-<?php include('index_header.php'); ?>
+<?php include('header.php'); ?>
 <body>
 <?php
 include('dbcon.php');
